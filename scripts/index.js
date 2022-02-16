@@ -32,4 +32,5 @@ function formSubmitHandler (evt) {
     addOrRemovePopup();
 }
 
+// Жми SaveBotton
 formElement.addEventListener('submit', formSubmitHandler);
