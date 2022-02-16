@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 11.72vw;
-    height: 5.13vh;
+    min-width: 150px;
+    min-height: 50px;
     border: 2px solid #ffffff;
     border-radius: 2px;
     color: #ffffff;
@@ -14,7 +14,7 @@
     opacity: 60%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 675px) {
     .profile__botton-add {
         margin: 36px auto 0;
         width: 100%;

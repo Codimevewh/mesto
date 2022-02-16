@@ -9,7 +9,7 @@
     list-style-type: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
     .elements__cards {
         grid-template-columns: repeat(2, 1fr);
     }
