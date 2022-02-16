@@ -1,5 +1,6 @@
-// popup в DOM
+// popup в DOM и от него отрубим popup_opened чтоб не мешался в потоке
 const popup = document.querySelector('.popup');
+popup.classList.remove('popup_opened');
 
 // Botton сlose и edit в DOM
 const popupClose = document.querySelector('.popup__botton-close');
@@ -16,7 +17,7 @@ const jobInput = formElement.querySelector('.popup__field_job');
 const nameProfile = document.querySelector('.profile__name');
 const jobProfile = document.querySelector('.profile__job');
 
-
+// Пока все DOMа, Вкл/Выкл по click popup_opened
 function addOrRemovePopup() {
     popup.classList.toggle('popup_opened')
 }
@@ -24,7 +25,7 @@ function addOrRemovePopup() {
 popupClose.addEventListener('click', addOrRemovePopup);
 popupOpened.addEventListener('click', addOrRemovePopup);
 
-// SaveForm
+// SaveForm textContent по value
 function formSubmitHandler (evt) {
     evt.preventDefault();
     nameProfile.textContent = nameInput.value;
@@ -32,5 +33,5 @@ function formSubmitHandler (evt) {
     addOrRemovePopup();
 }
 
-// Жми SaveBotton
+// Жми Botton-Save и да будет счастье
 formElement.addEventListener('submit', formSubmitHandler);

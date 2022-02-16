@@ -1,4 +1,9 @@
 .profile__botton-edit {
+    background-image: url(../../../images/edit.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 24px;
+    min-height: 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -7,4 +12,11 @@
 
 .profile__botton-edit:hover  {
     opacity: 60%;
+}
+
+@media (max-width: 675px) {
+    .profile__botton-edit {
+        min-width: 18px;
+        min-height: 18px;
+    }
 }
