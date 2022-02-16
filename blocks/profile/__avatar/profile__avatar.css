@@ -1,0 +1,8 @@
+.profile__avatar {
+    background-image: url(../../../images/Jacques-Yves-Cousteau.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    width:  120px;
+    height: 120px;
+}

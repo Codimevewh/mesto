@@ -1,0 +1,25 @@
+.popup__botton-close {
+    background-image: url(../../../images/close-icon.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    min-width: 32px;
+    min-height: 32px;
+    border: none; 
+}
+
+@media (max-width: 550px) {
+    .popup__botton-close {
+        min-width: 20px;
+        min-height: 20px;
+        top: -36px;
+        right: 0;
+    }
+}
+
+.popup__botton-close:hover, :focus {
+    opacity: 0.3;
+}

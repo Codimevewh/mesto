@@ -1,0 +1,10 @@
+.profile__botton-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 18px;
+}
+
+.profile__botton-edit:hover  {
+    opacity: 60%;
+}

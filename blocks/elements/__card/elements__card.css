@@ -1,0 +1,12 @@
+.elements__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  z-index: 0;
+ 
+}

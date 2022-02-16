@@ -1,0 +1,22 @@
+.elements__like {
+    display: flex;
+    position: relative;
+    align-content: center;
+    background-image: url(../../../images/like.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 22px;
+    height: 19px;
+    z-index: 2;
+    margin-right: 20px;
+}
+
+.elements__like:hover {
+    opacity: 60%;
+}
+
+.elements__like:active {
+    background-image: url(../../../images/like-active.svg);
+    opacity: 100%;
+}

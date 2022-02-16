@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="body">
+  <div class="page">
+      <header class="header">
+        <div class="header__logo"></div>
+      </header>
+      <main>
+          <section class="profile">
+            <div class="profile__avatar-block">
+              <div class="profile__avatar"></div>
+                 <div class="profile__info">
+                   <div class="profile__name-block">
+                     <h1 class="profile__name">Жак-Ив Кусто</h1>
+                     <div class="profile__botton-edit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <rect x="0.5" y="0.5" width="23" height="23" stroke="white"/>
+                       <path d="M17 8.32827L9.60377 15.7666L8.28302 14.4194L15.6604 7L17 8.32827ZM7 17L8.96226 16.4118L7.58491 15.0835L7 17Z" fill="white"/>
+                       </svg>
+                      </div>
+                   </div>
+                   <p class="profile__job">Исcледователь океана</p>
+                 </div>  
+            </div>
+            <div class="profile__botton-add"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z" fill="white"/>
+              </svg>          
+            </div>
+          </section>
+          <section class="elements">
+            <ul class="elements__cards">
+               <li class="elements__card">
+                <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаевск">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Карачаевск</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+               <li class="elements__card">
+                <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Гора Эльбрус</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+               <li class="elements__card">
+                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Домбай</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+               <li class="elements__card">
+                <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаево-Черкесия">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Карачаево-Черкесия</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+               <li class="elements__card">
+                <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Гора Эльбрус</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+               <li class="elements__card">
+                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+                <div class="elements__card_overlay">
+                  <div class="elements__title-block">
+                    <h2 class="elements__title">Домбай</h2>
+                    <div class="elements__like">
+                    </div>
+                  </div>
+                </div>
+               </li>
+            </ul>
+          </section>
+      </main>
+      <footer class="footer">
+         <div class="footer__copyright">&copy; 2022 Mesto Russia</div>
+      </footer>
+      <div class="popup popup_opened">
+        <div class="popup__container">
+        <form  name="profile-edit" class="popup__forms">
+         <fieldset class="popup__form">
+         <legend class="popup__title">Редактировать профиль</legend>
+         <button type="button" class="popup__botton-close"></button>
+              <input class="popup__field popup__field_name" value="" name="name" placeholder="Представтесь" type="text">
+              <input class="popup__field popup__field_job" value="" name="job" placeholder="Расскажите о себе" type="text">
+        <button type="submit" class="popup__botton-save">Сохранить</button>
+        </fieldset>
+       </form>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

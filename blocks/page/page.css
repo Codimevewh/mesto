@@ -1,0 +1,19 @@
+.page {
+    min-height: 100vh;
+    font-family: "Inter";
+    padding: 45px 200px 60px;
+    margin: 0 auto;
+    max-width: 880px;
+}
+
+@media (max-width: 1024px) {
+    .page {
+         padding: 45px 15% 36px;
+      }
+    }
+
+@media (max-width: 768px) {
+    .page {
+         padding: 28px 5.94% 36px;
+      }
+    }
