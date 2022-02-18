@@ -4,3 +4,9 @@
    margin-bottom: 16px;
    align-items: baseline;
 }
+
+@media (max-width: 475px) {
+   .profile__name-block {
+      margin: 0 0 11px 26px;
+   }
+}

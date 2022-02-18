@@ -5,8 +5,9 @@
   top: 0;
   border-radius: 10px;
   max-width: 100%;
-  height: auto;
+  min-height: 361px;
   margin: 0;
+  padding: 0;
   z-index: 0;
- 
+  background-color: #ffffff;
 }

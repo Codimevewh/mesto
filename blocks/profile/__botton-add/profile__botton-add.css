@@ -3,11 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 150px;
-    min-height: 50px;
+    min-width: 146px;
+    min-height: 46px;
     border: 2px solid #ffffff;
     border-radius: 2px;
     color: #ffffff;
+    cursor: pointer;
+    background-image: url(../../../images/add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .profile__botton-add:hover {
@@ -16,7 +20,8 @@
 
 @media (max-width: 675px) {
     .profile__botton-add {
-        margin: 36px auto 0;
-        width: 100%;
+        margin: 31px auto 0;
+        min-width: 278px;
+        background-size: 16px;
     }
  }

@@ -1,22 +1,16 @@
 .elements__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 17px;
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
     row-gap: 20px;
+    column-gap: 17px;
     justify-items: center;
     padding: 0;
     margin: 51px auto 0;
     list-style-type: none;
 }
 
-@media (max-width: 960px) {
-    .elements__cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 600px) {
     .elements__cards {
-        grid-template-columns: repeat(1, 1fr);
+        margin: 36px auto 0;
     }
 }

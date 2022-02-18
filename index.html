@@ -12,100 +12,88 @@
       <header class="header">
         <div class="header__logo"></div>
       </header>
-      <main>
+      <main class="content">
           <section class="profile">
             <div class="profile__avatar-block">
               <div class="profile__avatar"></div>
                  <div class="profile__info">
                    <div class="profile__name-block">
                      <h1 class="profile__name">Жак-Ив Кусто</h1>
-                     <div class="profile__botton-edit">
-                      </div>
+                     <botton type="botton" class="profile__botton-edit">
+                     </botton>
                    </div>
                    <p class="profile__job">Исcледователь океана</p>
                  </div>  
             </div>
-            <div class="profile__botton-add"><img src="./images/add.svg" alt="кнопка">
-            </div>
+            <botton type="botton" class="profile__botton-add"> <!-- На батоны орет валидатор, поэтому изначально отказался от них -->
+            </botton>
           </section>
           <section class="elements">
             <ul class="elements__cards">
                <li class="elements__card">
                 <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаевск">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Карачаевск</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
                <li class="elements__card">
                 <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Гора Эльбрус</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
                <li class="elements__card">
                 <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Домбай</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
                <li class="elements__card">
                 <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаево-Черкесия">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Карачаево-Черкесия</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
                <li class="elements__card">
                 <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Домбай</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
                <li class="elements__card">
                 <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-                <div class="elements__overlay">
                   <div class="elements__title-block">
                     <h2 class="elements__title">Гора Эльбрус</h2>
-                    <div class="elements__like">
-                    </div>
+                    <botton type="botton" class="elements__like">
+                    </botton>
                   </div>
-                </div>
                </li>
             </ul>
           </section>
       </main>
       <footer class="footer">
-         <div class="footer__copyright">&copy; 2022 Mesto Russia</div>
+         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
       </footer>
-      <div class="popup popup_opened">
+      <div class="popup">
         <div class="popup__container">
         <form  name="profile-edit" class="popup__forms">
-         <fieldset class="popup__form">
-         <legend class="popup__title">Редактировать профиль</legend>
+         <div class="popup__form">
+         <h2 class="popup__title">Редактировать профиль</h2>
          <button type="button" class="popup__botton-close"></button>
-              <input class="popup__field popup__field_name" value="" name="name" placeholder="Представтесь" type="text">
-              <input class="popup__field popup__field_job" value="" name="job" placeholder="Расскажите о себе" type="text">
+              <input class="popup__field popup__field_input_name" value="" name="name" type="text">
+              <input class="popup__field popup__field_input_job" value="" name="job" type="text">
         <button type="submit" class="popup__botton-save">Сохранить</button>
-        </fieldset>
+         </div>
        </form>
       </div>
     </div>

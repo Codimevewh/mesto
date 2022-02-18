@@ -4,4 +4,21 @@
     line-height: 22px;
     color: #FFFFFF;
     margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
 }
+
+@media (max-width: 600px) {
+    .profile__job {
+        width: 190px;
+    }
+}
+
+@media (max-width: 475px) {
+    .profile__job {
+        font-size: 14px;
+        line-height: 17px;
+    }
+ }

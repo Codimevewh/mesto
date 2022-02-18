@@ -8,14 +8,16 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-left: 18px;
+    cursor: pointer;
 }
 
 .profile__botton-edit:hover  {
     opacity: 60%;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 475px) {
     .profile__botton-edit {
+        margin-left: 10px;
         min-width: 18px;
         min-height: 18px;
     }

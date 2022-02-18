@@ -7,15 +7,16 @@
    margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
    .header__logo {
       margin: 0 0 0 27px;
    }
 }
 
-@media (max-width: 465px) {
+
+@media (max-width: 475px) {
    .header__logo {
-      width: 22.37vw;
-      max-height: auto;
+      width: 104px;
+      max-height: 25px;
    }
 }

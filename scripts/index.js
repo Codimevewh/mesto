@@ -1,6 +1,5 @@
-// popup в DOM и от него отрубим popup_opened чтоб не мешался в потоке
+// popup в DOM
 const popup = document.querySelector('.popup');
-popup.classList.remove('popup_opened');
 
 // Botton сlose и edit в DOM
 const popupClose = document.querySelector('.popup__botton-close');
@@ -10,16 +9,19 @@ const popupOpened = document.querySelector('.profile__botton-edit');
 const formElement = document.querySelector('.popup__forms');
 
 // input в DOM
-const nameInput = formElement.querySelector('.popup__field_name');
-const jobInput = formElement.querySelector('.popup__field_job');
+const nameInput = formElement.querySelector('.popup__field_input_name');
+const jobInput = formElement.querySelector('.popup__field_input_job');
 
 // profile в DOM
 const nameProfile = document.querySelector('.profile__name');
 const jobProfile = document.querySelector('.profile__job');
 
 // Пока все DOMа, Вкл/Выкл по click popup_opened
+
 function addOrRemovePopup() {
     popup.classList.toggle('popup_opened')
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
 }
 
 popupClose.addEventListener('click', addOrRemovePopup);

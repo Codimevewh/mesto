@@ -1,13 +1,23 @@
 .popup__title {
     font-size: 24px;
     line-height: 29px;
-    margin: 0 0 54px;
+    margin: 0 0 50px;
     font-weight: 900;
 }
+
+
 
 @media (max-width: 550px) {
     .popup__title {
         font-size: 18px;
         line-height: 22px;
+    }
+}
+
+/* Макет в figme не идеал, вместо высоты текста 18px mobil указан 22px, пришлось размазать отступы, нащупал в PerfectPixel */
+
+@media (max-width: 475px) {
+    .popup__title {
+       margin: 2px 0 77px;
     }
 }
