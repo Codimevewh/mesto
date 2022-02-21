@@ -5,6 +5,7 @@
     margin: 45px auto 60px;
     max-width: 880px;
     box-sizing: border-box;
+    background: #000000;
 }
 
 @media (max-width: 1024px) {

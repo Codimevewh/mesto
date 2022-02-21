@@ -2,18 +2,19 @@
     font-size: 18px;
     line-height: 22px;
     color: #545454;
+    margin: 0;
 }
 
-@media (max-width: 768px) {
-    .footer__copyright {
-       font-size: 14px;
-       line-height: 17px;
-       margin: 0 0 0 27px;
-    }
- }
+@media (max-width: 960px) {
+   .footer__copyright {
+      margin: 0 0 0 27px;
+   }
+}
 
  @media (max-width: 475px) {
     .footer__copyright {
+       font-size: 14px;
+       line-height: 17px;
        margin: 0 0 0 19px;
     }
  }

@@ -20,6 +20,6 @@
     }
 }
 
-.popup__botton-close:hover, :focus {
-    opacity: 60%;
+.popup__botton-close:hover {
+    opacity: 0.6;
 }

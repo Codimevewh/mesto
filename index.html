@@ -7,95 +7,83 @@
   <link rel="stylesheet" type="text/css" href="./pages/index.css">
   <title>Mesto</title>
 </head>
-<body class="body">
-  <div class="page">
-      <header class="header">
-        <div class="header__logo"></div>
-      </header>
-      <main class="content">
-          <section class="profile">
-            <div class="profile__avatar-block">
-              <div class="profile__avatar"></div>
-                 <div class="profile__info">
-                   <div class="profile__name-block">
-                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                     <botton type="botton" class="profile__botton-edit">
-                     </botton>
-                   </div>
-                   <p class="profile__job">Исcледователь океана</p>
-                 </div>  
-            </div>
-            <botton type="botton" class="profile__botton-add"> <!-- На батоны орет валидатор, поэтому изначально отказался от них -->
-            </botton>
-          </section>
-          <section class="elements">
-            <ul class="elements__cards">
-               <li class="elements__card">
-                <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаевск">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Карачаевск</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-               <li class="elements__card">
-                <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-               <li class="elements__card">
-                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Домбай</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-               <li class="elements__card">
-                <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаево-Черкесия">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Карачаево-Черкесия</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-               <li class="elements__card">
-                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Домбай</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-               <li class="elements__card">
-                <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-                  <div class="elements__title-block">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <botton type="botton" class="elements__like">
-                    </botton>
-                  </div>
-               </li>
-            </ul>
-          </section>
-      </main>
-      <footer class="footer">
-         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-      </footer>
-      <div class="popup">
-        <div class="popup__container">
-        <form  name="profile-edit" class="popup__forms">
-         <div class="popup__form">
-         <h2 class="popup__title">Редактировать профиль</h2>
-         <button type="button" class="popup__botton-close"></button>
-              <input class="popup__field popup__field_input_name" value="" name="name" type="text">
-              <input class="popup__field popup__field_input_job" value="" name="job" type="text">
-        <button type="submit" class="popup__botton-save">Сохранить</button>
-         </div>
-       </form>
+<body class="page">
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <div class="profile__avatar-block">
+        <div class="profile__avatar"></div>
+        <div class="profile__info">
+          <div class="profile__name-block">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__botton-edit"></button>
+          </div>
+          <p class="profile__job">Исcледователь океана</p>
+        </div>  
       </div>
+      <button type="button" class="profile__botton-add"></button>
+    </section>
+    <section class="elements">
+      <ul class="elements__cards">
+        <li class="elements__card">
+          <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаевск">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Карачаевск</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Домбай</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаево-Черкесия">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Карачаево-Черкесия</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Домбай</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+          <div class="elements__title-block">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <form  name="profile-edit" class="popup__form">
+        <h2 class="popup__title">Редактировать профиль</h2>
+          <button type="button" class="popup__botton-close"></button>
+            <input class="popup__field popup__field_input_name" value="" name="name" type="text" placeholder="Введите имя">
+            <input class="popup__field popup__field_input_job" value="" name="job" type="text" placeholder="Введите род занятий">
+        <button type="submit" class="popup__botton-save">Сохранить</button>
+      </form>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

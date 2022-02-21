@@ -12,10 +12,11 @@
     background-image: url(../../../images/add.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #000000;
 }
 
 .profile__botton-add:hover {
-    opacity: 60%;
+    opacity: 0.6;
 }
 
 @media (max-width: 675px) {
