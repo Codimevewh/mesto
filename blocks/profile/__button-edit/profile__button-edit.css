@@ -1,4 +1,4 @@
-.profile__botton-edit {
+.profile__button-edit {
     background-image: url(../../../images/edit.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -13,12 +13,12 @@
     border: none;
 }
 
-.profile__botton-edit:hover  {
+.profile__button-edit:hover  {
     opacity: 0.6;
 }
 
 @media (max-width: 475px) {
-    .profile__botton-edit {
+    .profile__button-edit {
         margin-left: 10px;
         min-width: 18px;
         min-height: 18px;

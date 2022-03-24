@@ -18,74 +18,109 @@
         <div class="profile__info">
           <div class="profile__name-block">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__botton-edit"></button>
+            <button type="button" class="profile__button-edit"></button>
           </div>
           <p class="profile__job">Исcледователь океана</p>
         </div>  
       </div>
-      <button type="button" class="profile__botton-add"></button>
+      <button type="button" class="profile__button-add"></button>
     </section>
     <section class="elements">
       <ul class="elements__cards">
         <li class="elements__card">
-          <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаевск">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
           <div class="elements__title-block">
-            <h2 class="elements__title">Карачаевск</h2>
+            <h2 class="elements__title">Архыз</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
         <li class="elements__card">
-          <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" alt="Челябинская область">
           <div class="elements__title-block">
-            <h2 class="elements__title">Гора Эльбрус</h2>
+            <h2 class="elements__title">Челябинская область</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
         <li class="elements__card">
-          <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg" alt="Иваново">
           <div class="elements__title-block">
-            <h2 class="elements__title">Домбай</h2>
+            <h2 class="elements__title">Иваново</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
         <li class="elements__card">
-          <img class="elements__image" src="./images/Karachayevsk.png" alt="Карачаево-Черкесия">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="Камчатка">
           <div class="elements__title-block">
-            <h2 class="elements__title">Карачаево-Черкесия</h2>
+            <h2 class="elements__title">Камчатка</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
         <li class="elements__card">
-          <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg" alt="Холмогорский район">
           <div class="elements__title-block">
-            <h2 class="elements__title">Домбай</h2>
+            <h2 class="elements__title">Холмогорский район</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
         <li class="elements__card">
-          <img class="elements__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Байкал">
           <div class="elements__title-block">
-            <h2 class="elements__title">Гора Эльбрус</h2>
+            <h2 class="elements__title">Байкал</h2>
             <button type="button" class="elements__like"></button>
           </div>
         </li>
       </ul>
+      <template class="elements-template">
+        <li class="elements__card">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="#" alt="#">
+          <div class="elements__title-block">
+            <h2 class="elements__title"></h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+      </template>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup popup-profile-edit">
     <div class="popup__container">
-      <form  name="profile-edit" class="popup__form">
+      <form  name="profile-edit" class="popup__form form-profile-edit">
         <h2 class="popup__title">Редактировать профиль</h2>
-          <button type="button" class="popup__botton-close"></button>
-            <input class="popup__field popup__field_input_name" value="" name="name" type="text" placeholder="Введите имя">
-            <input class="popup__field popup__field_input_job" value="" name="job" type="text" placeholder="Введите род занятий">
-        <button type="submit" class="popup__botton-save">Сохранить</button>
+        <button type="button" class="popup__button-close profile-edit-close"></button>
+        <input id="name" class="popup__field popup__field_input_name" name="name" type="text" placeholder="Введите имя">
+        <input id="job" class="popup__field popup__field_input_job" name="job" type="text" placeholder="Введите род занятий">
+        <button type="submit" class="popup__button-save">Сохранить</button>
       </form>
     </div>
   </div>
+  <div class="popup popup-elements-add">
+    <div class="popup__container">
+      <form  name="elements-add" class="popup__form form-elements-add">
+        <h2 class="popup__title">Новое место</h2>
+        <button type="button" class="popup__button-close elements-add-close"></button>
+        <input id="name-elements" class="popup__field popup__field_input_name-elements" name="name-elements" type="text" placeholder="Название">
+        <input id="links-elements" class="popup__field popup__field_input_links-elements" name="links-elements" type="url" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__button-save">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup-elements-image">
+    <div class="popup__container-image">
+      <button type="button" class="popup__button-close elements-image-close"></button>
+      <img class="elements-image" src="#" alt="#">
+      <h2 class="elements-image__title"></h2>
+    </div>
+  </div>
+  <script src="./scripts/initialCards.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

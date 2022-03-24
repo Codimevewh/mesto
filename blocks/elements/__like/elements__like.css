@@ -6,7 +6,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #ffffff;
+    background-color: transparent;
     border: none;
     width: 22px;
     height: 19px;
@@ -17,9 +17,4 @@
 
 .elements__like:hover {
     opacity: 0.5;
-}
-
-.elements__like:active {
-    background-image: url(../../../images/like-active.svg);
-    opacity: 1;
 }

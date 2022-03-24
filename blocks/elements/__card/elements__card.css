@@ -1,14 +1,17 @@
 .elements__card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   top: 0;
   border-radius: 10px;
   max-width: 100%;
-  min-height: 361px;
+  max-height: 361px;
   margin: 0;
   padding: 0;
   z-index: 0;
   background-color: #ffffff;
+  color: #000000;
   list-style-type: none;
+  overflow: hidden;
 }

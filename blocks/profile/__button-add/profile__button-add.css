@@ -1,4 +1,4 @@
-.profile__botton-add {
+.profile__button-add {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,12 +15,12 @@
     background-color: #000000;
 }
 
-.profile__botton-add:hover {
+.profile__button-add:hover {
     opacity: 0.6;
 }
 
 @media (max-width: 675px) {
-    .profile__botton-add {
+    .profile__button-add {
         margin: 31px auto 0;
         min-width: 278px;
         background-size: 16px;
