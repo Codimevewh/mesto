@@ -28,8 +28,8 @@ const inputLinksElements = formElementsAdd.querySelector('.popup__field_input_li
 //popup elements image
 const popupElementsImage = document.querySelector('.popup-elements-image');
 const popupElementsImageClose = document.querySelector('.elements-image-close');
-const popupContainerElementsImage = document.querySelector('.elements-image');
-const popupContainerElementsImageTitle = document.querySelector('.elements-image__title')
+const popupContainerElementsImage = document.querySelector('.popup-elements-image__image');
+const popupContainerElementsImageTitle = document.querySelector('.popup-elements-image__title')
 ////////////////////////////////////////////////////////////////////////
 
 ////////////////////// function add & remove popup /////////////////////
