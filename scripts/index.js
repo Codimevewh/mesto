@@ -46,14 +46,14 @@ function removePopup(popup) {
     document.removeEventListener('keyup', PopupEsc)
 }
 
-// Close popup Esc up
+//Close popup Esc up
 function PopupEsc(evt) {
     if(evt.key === 'Escape') {
         removePopup(document.querySelector('.popup_opened'));
     }
   }
 
-// Close popup click mouse up
+//Close popup click mouse up
 const closePopupClickMouse = function(event) {
     const popupOpened = document.querySelector('.popup_opened');
     const buttonClose = popupOpened.querySelector('.popup__button-close');
@@ -75,8 +75,10 @@ function showEditProfileForm() {
   }
 
 function showAddItemForm() {
-    formElementsAdd.reset();
     addPopup(popupElementsAdd);
+
+    formElementsAdd.reset();
+    
     clearFormInputError(formElementsAdd);
     const inputList =  formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
     toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-close'),

@@ -1,4 +1,4 @@
-.popup__button-save_disabled {
+.popup__button-save_inactive {
     display: disabled;
     box-sizing: border-box;
     pointer-events: none;
