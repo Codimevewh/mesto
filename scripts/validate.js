@@ -9,7 +9,7 @@ const enableValidationSettings = {
 
 // show input error
 const showInputError = (formElement, inputElement, errorMessage, inputErrorClass, errorClass) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.id}-field-error`);
     inputElement.classList.add(inputErrorClass);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(errorClass);
@@ -17,7 +17,7 @@ const showInputError = (formElement, inputElement, errorMessage, inputErrorClass
 
 // hidden input error
 const hiddenInputError = (formElement, inputElement, inputErrorClass, errorClass) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.id}-field-error`);
     inputElement.classList.remove(inputErrorClass);
     errorElement.classList.remove(errorClass);
     errorElement.textContent = '';
