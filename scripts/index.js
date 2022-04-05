@@ -81,7 +81,6 @@ function showAddItemForm() {
     const inputList =  formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
     toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-close'),
       enableValidationSettings.inactiveButtonClass);
-      console.log(toggleButtonState);
   }
   
 ////////////////////// function profile /////////////////////
