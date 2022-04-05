@@ -69,19 +69,17 @@ function showEditProfileForm() {
     inputsValueProfile();
     addPopup(popupProfileEdit);
     clearFormInputError(formProfileEdit);
-    const inputList =  formProfileEdit.querySelectorAll(enableValidationSettings.inputSelector);
+    const inputList = formProfileEdit.querySelectorAll(enableValidationSettings.inputSelector);
     toggleButtonState(inputList, popupProfileEdit.querySelector('.popup__button-save'),
       enableValidationSettings.inactiveButtonClass);
   }
 
 function showAddItemForm() {
-    addPopup(popupElementsAdd);
-
     formElementsAdd.reset();
-    
+    addPopup(popupElementsAdd);
     clearFormInputError(formElementsAdd);
-    const inputList =  formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
-    toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-close'),
+    const inputList = formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
+    toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-save'),
       enableValidationSettings.inactiveButtonClass);
   }
   

@@ -23,6 +23,9 @@ const hiddenInputError = (formElement, inputElement, inputErrorClass, errorClass
     errorElement.textContent = '';
   };
 
+
+
+
 //
 function checkInputValidity(formElement, inputElement, inputErrorClass, errorClass) {
     if (!inputElement.validity.valid) {
