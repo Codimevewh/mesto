@@ -44,23 +44,39 @@
   </footer>
   <div class="popup popup-profile-edit">
     <div class="popup__container">
-      <form  name="profile-edit" class="popup__form form-profile-edit">
+      <form  name="profile-edit" class="popup__form form-profile-edit" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <button type="button" class="popup__button-close profile-edit-close"></button>
-        <input id="name" class="popup__field popup__field_input_name" name="name" type="text" placeholder="Введите имя">
-        <input id="job" class="popup__field popup__field_input_job" name="job" type="text" placeholder="Введите род занятий">
-        <button type="submit" class="popup__button-save">Сохранить</button>
+        <fieldset class="popup__fields">
+          <button type="button" class="popup__button-close profile-edit-close"></button>
+          <lebel class="popup__field-input">
+            <input id="name" class="popup__field popup__field_input_name" value="" name="name" type="text" placeholder="Введите имя" minlength="2" maxlength="40" required>
+            <span class="popup__field-error name-field-error"></span>
+          </lebel>
+          <lebel class="popup__field-input">
+            <input id="job" class="popup__field popup__field_input_job" value="" name="job" type="text" placeholder="Введите род занятий" minlength="2" maxlength="200" required>
+            <span class="popup__field-error job-field-error"></span>
+          </lebel>
+        </fieldset>
+        <button type="submit" class="popup__button-save" disabled="">Сохранить</button>
       </form>
     </div>
   </div>
   <div class="popup popup-elements-add">
     <div class="popup__container">
-      <form  name="elements-add" class="popup__form form-elements-add">
+      <form  name="elements-add" class="popup__form form-elements-add" novalidate>
         <h2 class="popup__title">Новое место</h2>
-        <button type="button" class="popup__button-close elements-add-close"></button>
-        <input id="name-elements" class="popup__field popup__field_input_name-elements" name="name-elements" type="text" placeholder="Название">
-        <input id="links-elements" class="popup__field popup__field_input_links-elements" name="links-elements" type="url" placeholder="Ссылка на картинку">
-        <button type="submit" class="popup__button-save">Создать</button>
+        <fieldset class="popup__fields">
+          <button type="button" class="popup__button-close elements-add-close"></button>
+          <lebel class="popup__field-input">
+            <input id="name-elements" class="popup__field popup__field_input_name-elements" value="" name="name-elements" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class="popup__field-error elements-name-field-error"></span>
+          </lebel>
+          <lebel class="popup__field-input">
+            <input id="links-elements" class="popup__field popup__field_input_links-elements" value="" name="links-elements" type="url" placeholder="Ссылка на картинку" required>
+            <span class="popup__field-error url-name-field-error"></span>
+          </lebel>
+        </fieldset>
+        <button type="submit" class="popup__button-save" disabled="">Создать</button>
       </form>
     </div>
   </div>
@@ -73,5 +89,6 @@
   </div>
   <script src="./scripts/initialCards.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>

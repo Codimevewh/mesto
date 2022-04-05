@@ -37,13 +37,53 @@ const popupContainerElementsImageTitle = document.querySelector('.popup-elements
 //add popup
 function addPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keyup', PopupEsc)
 }
 
 //remove popup
 function removePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keyup', PopupEsc)
 }
 
+// Close popup Esc up
+function PopupEsc(evt) {
+    if(evt.key === 'Escape') {
+        removePopup(document.querySelector('.popup_opened'));
+    }
+  }
+
+// Close popup click mouse up
+const closePopupClickMouse = function(event) {
+    const popupOpened = document.querySelector('.popup_opened');
+    const buttonClose = popupOpened.querySelector('.popup__button-close');
+    if (event.target !== event.currentTarget && event.target !== buttonClose) {
+      return;
+    }
+    removePopup(popupOpened);
+  }
+
+//////////////////////////////////////////////////////////////////////////////////
+
+function showEditProfileForm() {
+    inputsValueProfile();
+    addPopup(popupProfileEdit);
+    clearFormInputError(formProfileEdit);
+    const inputList =  formProfileEdit.querySelectorAll(enableValidationSettings.inputSelector);
+    toggleButtonState(inputList, popupProfileEdit.querySelector('.popup__button-save'),
+      enableValidationSettings.inactiveButtonClass);
+  }
+
+function showAddItemForm() {
+    formElementsAdd.reset();
+    addPopup(popupElementsAdd);
+    clearFormInputError(formElementsAdd);
+    const inputList =  formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
+    toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-close'),
+      enableValidationSettings.inactiveButtonClass);
+      console.log(toggleButtonState);
+  }
+  
 ////////////////////// function profile /////////////////////
 
 //input value profile
@@ -129,29 +169,32 @@ function AddElementsImage(src, alt) {
 /////////////////////////// Open Popup /////////////////////////////
 
 //open popup profile
-profileButtonEdit.addEventListener('click', () => {
-    inputsValueProfile();
-    addPopup(popupProfileEdit);
-});
+profileButtonEdit.addEventListener('click', showEditProfileForm);
 
 //open popup elements
-profileButtonAdd.addEventListener('click', () => {
-    formElementsAdd.reset();
-    addPopup(popupElementsAdd);
-});
+profileButtonAdd.addEventListener('click', showAddItemForm);
 
 /////////////////////////// Close Popup ////////////////////////////
 
-//close popup profile
+//close button popup profile
 popupProfileEditClose.addEventListener('click', () => removePopup(popupProfileEdit));
 
-//close popup elements
+//close click mouse popup profile
+popupProfileEdit.addEventListener('mouseup', closePopupClickMouse);
+
+//close button popup elements
 popupElementsAddClose.addEventListener('click', () => removePopup(popupElementsAdd));
+
+//close click mouse popup elements
+popupElementsAdd.addEventListener('mouseup', closePopupClickMouse);
 
 /////////////////////////// Close Image ////////////////////////////
 
 //close image
 popupElementsImage.addEventListener('click', () => removePopup(popupElementsImage));
+
+//close click mouse image
+popupElementsImage.addEventListener('mouseup', closePopupClickMouse);
 
 /////////////////////////// Save data button ///////////////////////
 

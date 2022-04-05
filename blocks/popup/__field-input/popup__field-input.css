@@ -1,0 +1,5 @@
+.popup__field-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
