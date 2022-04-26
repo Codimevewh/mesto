@@ -1,53 +1,30 @@
-///////////////////////////// constants //////////////////////////////
+import {Card} from './Card.js';
+import {FormValidator} from './FormValidator.js';
 
-const profileButtonEdit = document.querySelector('.profile__button-edit');
-const profileButtonAdd = document.querySelector('.profile__button-add');
-const profileName = document.querySelector('.profile__name');
-const profileJob = document.querySelector('.profile__job');
+////////////////////// constants FormValidator /////////////////////
 
-//container for elements
-const elementsСontainer = document.querySelector('.elements__cards');
+const formProfileEditValidator = new FormValidator(enableValidationSettings, formProfileEdit);
+formProfileEditValidator.enableValidation();
 
-//template for elements
-const elementsTemplate = document.querySelector('.elements-template');
-
-//popup profile edit
-const popupProfileEdit = document.querySelector('.popup-profile-edit');
-const formProfileEdit = document.querySelector('.form-profile-edit');
-const popupProfileEditClose = document.querySelector('.profile-edit-close');
-const inputName = formProfileEdit.querySelector('.popup__field_input_name');
-const inputJob = formProfileEdit.querySelector('.popup__field_input_job');
-
-//popup elements add
-const popupElementsAdd = document.querySelector('.popup-elements-add');
-const formElementsAdd = document.querySelector('.form-elements-add');
-const popupElementsAddClose = document.querySelector('.elements-add-close');
-const inputNameElements = formElementsAdd.querySelector('.popup__field_input_name-elements');
-const inputLinksElements = formElementsAdd.querySelector('.popup__field_input_links-elements');
-
-//popup elements image
-const popupElementsImage = document.querySelector('.popup-elements-image');
-const popupElementsImageClose = document.querySelector('.elements-image-close');
-const popupContainerElementsImage = document.querySelector('.popup-elements-image__image');
-const popupContainerElementsImageTitle = document.querySelector('.popup-elements-image__title')
-////////////////////////////////////////////////////////////////////////
+const formElementsAddValidator = new FormValidator(enableValidationSettings, formElementsAdd);
+formElementsAddValidator.enableValidation();
 
 ////////////////////// function add & remove popup /////////////////////
 
 //add popup
-function addPopup(popup) {
+export function addPopup(popup) {
     popup.classList.add('popup_opened');
-    document.addEventListener('keyup', PopupEsc)
+    document.addEventListener('keyup', pressPopupEsc)
 }
 
 //remove popup
 function removePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener('keyup', PopupEsc)
+    document.removeEventListener('keyup', pressPopupEsc)
 }
 
-//Close popup Esc up
-function PopupEsc(evt) {
+//press popup Esc up
+function pressPopupEsc(evt) {
     if(evt.key === 'Escape') {
         removePopup(document.querySelector('.popup_opened'));
     }
@@ -65,22 +42,16 @@ const closePopupClickMouse = function(event) {
 
 //////////////////////////////////////////////////////////////////////////////////
 
-function showEditProfileForm() {
+function showEditProfileForm(formProfileEditValidator) {
     inputsValueProfile();
+    formProfileEditValidator.clearFormInputError();
     addPopup(popupProfileEdit);
-    clearFormInputError(formProfileEdit);
-    const inputList = formProfileEdit.querySelectorAll(enableValidationSettings.inputSelector);
-    toggleButtonState(inputList, popupProfileEdit.querySelector('.popup__button-save'),
-      enableValidationSettings.inactiveButtonClass);
   }
 
-function showAddItemForm() {
+function showAddItemForm(formElementsAddValidator) {
     formElementsAdd.reset();
+    formElementsAddValidator.clearFormInputError();
     addPopup(popupElementsAdd);
-    clearFormInputError(formElementsAdd);
-    const inputList = formElementsAdd.querySelectorAll(enableValidationSettings.inputSelector);
-    toggleButtonState(inputList, popupElementsAdd.querySelector('.popup__button-save'),
-      enableValidationSettings.inactiveButtonClass);
   }
   
 ////////////////////// function profile /////////////////////
@@ -98,7 +69,7 @@ function textContentsProfile() {
 }
 
 //save data profile
-function formSubmitProfileEdit (evt) {
+function saveSubmitProfileEdit (evt) {
     evt.preventDefault();
     textContentsProfile();
     removePopup(popupProfileEdit);
@@ -106,72 +77,41 @@ function formSubmitProfileEdit (evt) {
 
 //////////////////////// function elements /////////////////////////
 
-//template clone card
-function templateCloneCards(card) {
-    const elementsCard = elementsTemplate.content.cloneNode(true);
-    const elementsImage = elementsCard.querySelector('.elements__image');
-    elementsCard.querySelector('.elements__like').addEventListener('click', elementsLike);
-    elementsCard.querySelector('.elements__trash').addEventListener('click', removeElements);
-    elementsCard.querySelector('.elements__title').textContent = card.name;
-    elementsImage.src = card.link;
-    elementsImage.alt = card.name;
-    elementsImage.addEventListener('click', () => AddElementsImage(card.link, card.name));
-    return elementsCard;
-}
+const outputPlaceCard = card => {
+    const item = new Card(card, '.elements-template');
+    const itemElement = item.generateCard();
+    return itemElement;
+  };
+  
+  //render elements
+  initialCards.forEach((card) => {
+    const elementsСontainer = document.querySelector('.elements__cards');
+    elementsСontainer.append(outputPlaceCard(card));
+  });
 
-//render elements
-function renderCard() {
-    initialCards.forEach((card) => {
-        const elementsCards = templateCloneCards(card);
-        elementsСontainer.append(elementsCards);
-    });
-}
-renderCard();
-
-//textcontents elements
-function contentElements() {
+//appoint contents elements
+function appointСontentElements() {
     const card = {
         name: inputNameElements.value,
         link: inputLinksElements.value
     };
-    const elementsContent = templateCloneCards(card);
-    elementsСontainer.prepend(elementsContent);
-}
-
-//remove elements
-function removeElements(evt) {
-    evt.target.closest('.elements__card').remove();
-}
-
-//like elements
-function elementsLike(evt) {
-    evt.target.closest('.elements__like').classList.toggle('elements__like_active');
+    elementsСontainer.prepend(outputPlaceCard(card));
 }
 
 //save data elements
-function submitElementsAdd(evt) {
+function saveSubmitElementsAdd(evt) {
     evt.preventDefault();
-    contentElements();
+    appointСontentElements();
     removePopup(popupElementsAdd);
-}
-
-////////////////////////// function image ///////////////////////////
-
-//open image
-function AddElementsImage(src, alt) {
-    addPopup(popupElementsImage);
-    popupContainerElementsImage.src = src;
-    popupContainerElementsImage.alt = alt;
-    popupContainerElementsImageTitle.textContent = alt;
 }
 
 /////////////////////////// Open Popup /////////////////////////////
 
 //open popup profile
-profileButtonEdit.addEventListener('click', showEditProfileForm);
+profileButtonEdit.addEventListener('click', () => {showEditProfileForm(formProfileEditValidator);});
 
-//open popup elements
-profileButtonAdd.addEventListener('click', showAddItemForm);
+//open popup elements 
+profileButtonAdd.addEventListener('click', () => {showAddItemForm(formElementsAddValidator);});
 
 /////////////////////////// Close Popup ////////////////////////////
 
@@ -189,16 +129,13 @@ popupElementsAdd.addEventListener('mouseup', closePopupClickMouse);
 
 /////////////////////////// Close Image ////////////////////////////
 
-//close image
-popupElementsImage.addEventListener('click', () => removePopup(popupElementsImage));
-
 //close click mouse image
 popupElementsImage.addEventListener('mouseup', closePopupClickMouse);
 
 /////////////////////////// Save data button ///////////////////////
 
 //save data button profile
-formProfileEdit.addEventListener('submit', formSubmitProfileEdit);
+formProfileEdit.addEventListener('submit', saveSubmitProfileEdit);
 
 //save data button elements
-formElementsAdd.addEventListener('submit', submitElementsAdd);
+formElementsAdd.addEventListener('submit', saveSubmitElementsAdd);

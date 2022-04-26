@@ -11,3 +11,10 @@
     opacity: 0;
     transition: .3s;
 }
+
+@media (max-width: 550px) {
+    .popup__field-error {
+        width: 238px;
+    }
+}
+
