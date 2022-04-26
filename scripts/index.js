@@ -77,7 +77,7 @@ function saveSubmitProfileEdit (evt) {
 
 //////////////////////// function elements /////////////////////////
 
-const outputPlaceCard = card => {
+const renderCards = card => {
     const item = new Card(card, '.elements-template');
     const itemElement = item.generateCard();
     return itemElement;
@@ -86,7 +86,7 @@ const outputPlaceCard = card => {
   //render elements
   initialCards.forEach((card) => {
     const elementsСontainer = document.querySelector('.elements__cards');
-    elementsСontainer.append(outputPlaceCard(card));
+    elementsСontainer.append(renderCards(card));
   });
 
 //appoint contents elements
@@ -95,7 +95,7 @@ function appointСontentElements() {
         name: inputNameElements.value,
         link: inputLinksElements.value
     };
-    elementsСontainer.prepend(outputPlaceCard(card));
+    elementsСontainer.prepend(renderCards(card));
 }
 
 //save data elements
