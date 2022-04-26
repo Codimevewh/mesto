@@ -31,6 +31,7 @@ const profileButtonEdit = document.querySelector('.profile__button-edit');
 const profileButtonAdd = document.querySelector('.profile__button-add');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
+const elementsСontainer = document.querySelector('.elements__cards');
 
 //template for elements
 const elementsTemplate = document.querySelector('.elements-template');
