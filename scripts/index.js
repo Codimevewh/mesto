@@ -85,7 +85,6 @@ const renderCards = card => {
   
   //render elements
   initialCards.forEach((card) => {
-    const elementsСontainer = document.querySelector('.elements__cards');
     elementsСontainer.append(renderCards(card));
   });
 
