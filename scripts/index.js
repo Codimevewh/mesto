@@ -77,7 +77,7 @@ function saveSubmitProfileEdit (evt) {
 
 //////////////////////// function elements /////////////////////////
 
-const renderCards = card => {
+const renderCard = card => {
     const item = new Card(card, '.elements-template');
     const itemElement = item.generateCard();
     return itemElement;
@@ -85,7 +85,7 @@ const renderCards = card => {
   
   //render elements
   initialCards.forEach((card) => {
-    elementsСontainer.append(renderCards(card));
+    elementsСontainer.append(renderCard(card));
   });
 
 //appoint contents elements
@@ -94,7 +94,7 @@ function appointСontentElements() {
         name: inputNameElements.value,
         link: inputLinksElements.value
     };
-    elementsСontainer.prepend(renderCards(card));
+    elementsСontainer.prepend(renderCard(card));
 }
 
 //save data elements
@@ -107,10 +107,10 @@ function saveSubmitElementsAdd(evt) {
 /////////////////////////// Open Popup /////////////////////////////
 
 //open popup profile
-profileButtonEdit.addEventListener('click', () => {showEditProfileForm(formProfileEditValidator);});
+profileButtonEdit.addEventListener('click', () => showEditProfileForm(formProfileEditValidator));
 
 //open popup elements 
-profileButtonAdd.addEventListener('click', () => {showAddItemForm(formElementsAddValidator);});
+profileButtonAdd.addEventListener('click', () => showAddItemForm(formElementsAddValidator));
 
 /////////////////////////// Close Popup ////////////////////////////
 

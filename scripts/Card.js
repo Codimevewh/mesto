@@ -16,17 +16,18 @@ export class Card {
         .cloneNode(true);
     }
   
-    _handleLikeElements(evt) {
-       this._likeElements.classList.toggle('elements__like_active');
+    _handleLikeElement() {
+       this._likeElement.classList.toggle('elements__like_active');
     }
   
-    //remove elements in CARD
-    _removeElements(evt) {
+    //remove element in CARD
+    _removeElement() {
        this._element.remove();
+       this._element = null;
     }
 
     //open image in CARD
-    _addElementsImage() {
+    _addElementImage() {
       popupContainerElementsImage.src = this._image;
       popupContainerElementsImage.alt = this._title;;
       popupContainerElementsImageTitle.textContent = this._title;
@@ -35,24 +36,20 @@ export class Card {
   
     //combine event Listeners in CARD
     _setEventListeners() {
-      this._likeElements.addEventListener('click', (evt) => {
-        this._handleLikeElements(evt);
-      });
-      this._element.querySelector('.elements__trash').addEventListener('click', (evt) => {
-        this._removeElements(evt);
-      });
-      this._element.querySelector('.elements__image').addEventListener('click', () => {
-        this._addElementsImage();
-      });
+      this._likeElement.addEventListener('click', () => this._handleLikeElement());
+      this._element.querySelector('.elements__trash').addEventListener('click', () => this._removeElement());
+      this._element.querySelector('.elements__image').addEventListener('click', () => this._addElementImage());
     }
   
     //generate card in CARD
     generateCard() {
       this._element = this._getTemplate();
-      this._likeElements = this._element.querySelector('.elements__like');
+      const elementImage = this._element.querySelector('.elements__image');
+      this._likeElement = this._element.querySelector('.elements__like');
       this._element.querySelector('.elements__title').textContent = this._title;
-      this._element.querySelector('.elements__image').src = this._image;
-      this._element.querySelector('.elements__image').alt = this._title;
+      elementImage.src = this._image;
+      elementImage.alt = this._title;
+      
       this._setEventListeners();
   
       return this._element;
